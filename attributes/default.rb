@@ -12,4 +12,4 @@ default['consul']['ports'] = {
   serf_wan: 8302,
   server: 8300
 }
-
+default['consul']['agent_options'] = ['-data-dir /tmp/consul']
