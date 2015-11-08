@@ -18,7 +18,7 @@ default['consul']['web_ui']['version']           = '0.5.2'
 default['consul']['web_ui']['use']               = false
 default['consul']['web_ui']['download_url']      = "https://dl.bintray.com/mitchellh/consul/#{default['consul']['version']}_web_ui.zip"
 
-default['consul']['template']['version']         = '0.11.1'
-default['consul']['template']['download_url']    = "https://codeload.github.com/hashicorp/consul-template/zip/v#{default['consul']['template']['version']}"
+default['consul']['template']['version']         = '0.11.0'
+default['consul']['template']['download_url']    = "https://github.com/hashicorp/consul-template/releases/download/v#{default['consul']['template']['version']}/consul_template_#{default['consul']['template']['version']}_linux_amd64.zip"
 default['consul']['template']['options']         = []
 default['consul']['template']['config_cookbook'] = 'consul'
