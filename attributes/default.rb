@@ -11,7 +11,7 @@ default['consul']['servers']                     = %w()
 default['consul']['start_join']                  = false
 default['consul']['domain']                      = 'consul'
 default['consul']['log_level']                   = 'INFO'
-default['consul']['client_addr']                 = '0.0.0.0'
+default['consul']['bind_addr']                   = '0.0.0.0'
 default['consul']['client_addr']                 = '127.0.0.1'
 
 default['consul']['web_ui']['version']           = '0.5.2'
