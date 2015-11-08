@@ -4,6 +4,13 @@
 package 'unzip'
 package 'curl'
 
+directory '/var/run/consul-template' do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+
 directory '/usr/lib/consul/template.d' do
   owner 'root'
   group 'root'
