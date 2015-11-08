@@ -1,5 +1,5 @@
 {
-  "datacenter": "<%= node['consul']['dc'] || 'dc1' %>",
+  "datacenter": "<%= node['consul']['dc'] %>",
   "node_name": "<%= node.name.split('.')[0] %>",
   "server": <%= Array(node['consul']['servers']).include?(node['network']['interfaces']['eth1']['addresses'].keys[1]) ? 'true' : 'false' %>,
 <% if node['consul']['start_join'] == true -%>
@@ -8,8 +8,8 @@
 <% if node['consul']['web_ui']['use'] == true -%>
   "ui_dir": "/usr/lib/consul/web",
 <% end -%>
-  "domain": "<%= node['consul']['domain'] || 'consul.lan' %>",
-  "log_level": "<%= node['consul']['log_level'] || 'INFO' %>",
-  "bind_addr": "<%= node['consul']['client_addr'] || '0.0.0.0' %>",
-  "client_addr": "<%= node['consul']['client_addr'] || '127.0.0.1' %>"
+  "domain": "<%= node['consul']['domain'] %>",
+  "log_level": "<%= node['consul']['log_level'] %>",
+  "bind_addr": "<%= node['consul']['bind_addr'] %>",
+  "client_addr": "<%= node['consul']['client_addr'] %>"
 }
