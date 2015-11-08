@@ -5,6 +5,9 @@
 <% if node['consul']['start_join'] == true -%>
   "start_join": [ <%= Array(node['consul']['servers']).map {|ip| "\"#{ip}\"" }.join(',') %> ],
 <% end -%>
+<% if node['consul']['web_ui']['use'] == true -%>
+  "ui_dir": "/usr/lib/consul/web",
+<% end -%>
   "domain": "<%= node['consul']['domain'] || 'consul.lan' %>",
   "log_level": "<%= node['consul']['log_level'] || 'INFO' %>",
   "bind_addr": "<%= node['consul']['client_addr'] || '0.0.0.0' %>",
