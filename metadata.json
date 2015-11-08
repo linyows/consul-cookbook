@@ -1,7 +1,6 @@
 {
   "name": "consul",
   "description": "Installs/Configures consul",
-  "long_description": "Consul Cookbook\n===============\n",
   "maintainer": "linyows",
   "maintainer_email": "linyows@gmail.com",
   "license": "All rights reserved",
@@ -25,7 +24,7 @@
   },
   "recipes": {
   },
-  "version": "0.1.0",
+  "version": "0.2.0",
   "source_url": "",
   "issues_url": ""
 }
