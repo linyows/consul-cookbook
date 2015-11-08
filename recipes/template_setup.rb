@@ -4,6 +4,13 @@
 package 'unzip'
 package 'curl'
 
+directory '/usr/lib/consul/template.d' do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+
 cookbook_file '/usr/lib/systemd/system/consul-template.service' do
   source 'consul-template.service'
   owner 'root'

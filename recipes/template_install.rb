@@ -23,5 +23,5 @@ end
 
 link "#{bin_path}/consul-template" do
   to "#{consul_path}/bin/#{node['consul']['template']['version']}"
-  notifies :restart, 'service[consul]', :delayed
+  notifies :restart, 'service[consul-template]', :delayed
 end

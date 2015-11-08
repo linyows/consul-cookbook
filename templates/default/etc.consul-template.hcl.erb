@@ -10,7 +10,7 @@ syslog {
 }
 
 template {
-  source = "/tmp/nginx.ctmpl"
+  source = "/usr/lib/consul/template.d/nginx.backends.ctmpl"
   destination = "/var/nginx/conf.d/dynamic.backends.conf"
   command = "service nginx reload"
 }
