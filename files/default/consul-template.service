@@ -11,11 +11,6 @@ EnvironmentFile=-/etc/sysconfig/consul-template
 ExecStart=/usr/bin/consul-template $OPTIONS -config=/etc/consul-template.conf
 ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process
-RestartSec=10s
-LimitNOFILE=4096
-
-[Install]
-WantedBy=multi-user.target
 
 [Install]
 WantedBy=multi-user.target
