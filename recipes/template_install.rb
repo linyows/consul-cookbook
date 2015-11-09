@@ -16,7 +16,7 @@ bash "expand consul-template-#{node['consul']['template']['version']}" do
     unzip consul-template-#{node['consul']['template']['version']}.zip
     mkdir -p #{node['consul']['lib_path']}/bin
     chmod +x consul-template
-    mv consul-template consul-template-#{node['consul']['lib_path']}/bin/#{node['consul']['template']['version']}
+    mv consul-template #{node['consul']['lib_path']}/bin/consul-template-#{node['consul']['template']['version']}
   CODE
 end
 
