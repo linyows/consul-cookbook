@@ -6,6 +6,7 @@ default['consul']['lib_path']                    = '/usr/lib/consul'
 default['consul']['version']                     = '0.5.2'
 default['consul']['command_options']             = ['-data-dir /tmp/consul']
 default['consul']['config_cookbook']             = 'consul'
+default['consul']['systemd_cookbook']            = 'consul'
 default['consul']['download_url']                = "https://dl.bintray.com/mitchellh/consul/#{default['consul']['version']}_linux_amd64.zip"
 
 default['consul']['dc']                          = 'dc1'
@@ -24,3 +25,4 @@ default['consul']['template']['version']         = '0.11.0'
 default['consul']['template']['download_url']    = "https://github.com/hashicorp/consul-template/releases/download/v#{default['consul']['template']['version']}/consul_template_#{default['consul']['template']['version']}_linux_amd64.zip"
 default['consul']['template']['command_options'] = []
 default['consul']['template']['config_cookbook'] = 'consul'
+default['consul']['template']['systemd_cookbook'] = 'consul'

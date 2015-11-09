@@ -35,6 +35,7 @@ cookbook_file '/usr/lib/systemd/system/consul.service' do
   owner 'root'
   group 'root'
   mode '0755'
+  coobook node['consul']['systemd_cookbook']
   notifies :restart, 'service[consul]', :delayed
 end
 

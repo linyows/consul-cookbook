@@ -24,6 +24,7 @@ cookbook_file '/usr/lib/systemd/system/consul-template.service' do
   owner 'root'
   group 'root'
   mode '0755'
+  cookbook node['consul']['template']['systemd_cookbook']
   notifies :restart, 'service[consul-template]', :delayed
 end
 
