@@ -11,7 +11,8 @@ directory '/var/run/consul-template' do
   action :create
 end
 
-directory '/usr/lib/consul/template.d' do
+directory "#{node['consul']['lib_path']}/template.d" do
+  recursive true
   owner 'root'
   group 'root'
   mode '0755'

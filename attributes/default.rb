@@ -1,6 +1,8 @@
 # Cookbook Name: consul
 # Attribute: default
 
+default['consul']['lib_path']                    = '/usr/lib/consul'
+
 default['consul']['version']                     = '0.5.2'
 default['consul']['agent_options']               = ['-data-dir /tmp/consul']
 default['consul']['config_cookbook']             = 'consul'

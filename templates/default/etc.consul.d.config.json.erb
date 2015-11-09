@@ -6,7 +6,7 @@
   "start_join": [ <%= Array(node['consul']['servers']).map {|ip| "\"#{ip}\"" }.join(',') %> ],
 <% end -%>
 <% if node['consul']['web_ui']['use'] == true -%>
-  "ui_dir": "/usr/lib/consul/web",
+  "ui_dir": "<%= node['consul']['lib_path'] %>/web-ui/<% if node['consul']['web_ui']['version'] %>",
 <% end -%>
   "domain": "<%= node['consul']['domain'] %>",
   "log_level": "<%= node['consul']['log_level'] %>",

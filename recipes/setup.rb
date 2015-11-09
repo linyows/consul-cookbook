@@ -22,6 +22,14 @@ directory '/etc/consul.d' do
   action :create
 end
 
+directory "#{node['consul']['lib_path']}/bin" do
+  recursive true
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+
 cookbook_file '/usr/lib/systemd/system/consul.service' do
   source 'consul.service'
   owner 'root'
