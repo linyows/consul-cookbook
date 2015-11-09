@@ -17,7 +17,7 @@ remote_file "#{cache_path}/consul-web-ui-#{node['consul']['web_ui']['version']}.
 end
 
 bash "expand consul-web-ui-#{node['consul']['web_ui']['version']}" do
-  not_if "test -f #{node['consul']['lib_path']}/web-ui/#{node['consul']['web_ui']['version']}"
+  not_if "test -d #{node['consul']['lib_path']}/web-ui/#{node['consul']['web_ui']['version']}"
   code <<-CODE
     cd "#{cache_path}"
     unzip consul-web-ui-#{node['consul']['web_ui']['version']}.zip
