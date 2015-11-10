@@ -29,7 +29,7 @@ cookbook_file '/usr/lib/systemd/system/consul-template.service' do
 end
 
 template '/etc/sysconfig/consul-template' do
-  source 'etc.sysconfig.consul-template.erb'
+  source 'sysconfig.consul-template.erb'
   owner 'root'
   group 'root'
   mode '0755'
