@@ -11,14 +11,6 @@ directory '/var/run/consul-template' do
   action :create
 end
 
-directory "#{node['consul']['lib_path']}/template.d" do
-  recursive true
-  owner 'root'
-  group 'root'
-  mode '0755'
-  action :create
-end
-
 cookbook_file '/usr/lib/systemd/system/consul-template.service' do
   source 'consul-template.service'
   owner 'root'
