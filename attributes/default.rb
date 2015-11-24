@@ -26,3 +26,6 @@ default['consul']['template']['download_url']     = "https://github.com/hashicor
 default['consul']['template']['command_options']  = []
 default['consul']['template']['conf_cookbook']    = 'consul'
 default['consul']['template']['systemd_cookbook'] = 'consul'
+
+default['consul']['retry']['version']             = '0.1.0'
+default['consul']['retry']['download_url']        = "https://github.com/linyows/go-retry/releases/download/v#{default['consul']['retry']['version']}/linux_amd64.zip"
