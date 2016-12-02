@@ -4,6 +4,14 @@
 package 'unzip'
 package 'curl'
 
+cookbook_file '/etc/tmpfiles.d/consul-template.conf' do
+  source 'tmpfiles.d.consul-template.conf'
+  owner 'root'
+  group 'root'
+  mode '0755'
+  cookbook node['consul']['template']['tmpfiles_file']
+end
+
 directory '/var/run/consul-template' do
   owner 'root'
   group 'root'
