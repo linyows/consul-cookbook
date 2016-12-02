@@ -1,0 +1,16 @@
+[Unit]
+Description=Consul Alerts
+Documentation=https://github.com/AcalephStorage/consul-alerts
+Requires=network-online.target consul.service
+After=network-online.target consul.service
+
+[Service]
+Environment=GOMAXPROCS=2
+EnvironmentFile=-/etc/sysconfig/consul-alerts
+ExecStart=/usr/bin/consul-alerts start $OPTIONS
+Restart=on-failure
+ExecReload=/bin/kill -HUP $MAINPID
+KillMode=process
+
+[Install]
+WantedBy=multi-user.target
