@@ -17,7 +17,7 @@ default['consul']['domain']                       = 'consul'
 default['consul']['log_level']                    = 'INFO'
 default['consul']['bind_addr']                    = ''
 default['consul']['client_addr']                  = '127.0.0.1'
-default['consul']['multiple_private_ip']          = false
+default['consul']['multiple_private_ips']         = false
 
 default['consul']['web_ui']['version']            = '0.7.1'
 default['consul']['web_ui']['use']                = false

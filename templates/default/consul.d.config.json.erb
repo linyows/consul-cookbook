@@ -10,7 +10,7 @@
 <% end -%>
   "domain": "<%= node['consul']['domain'] %>",
   "log_level": "<%= node['consul']['log_level'] %>",
-<% if node['consul']['multiple_private_ip'] == true %>
+<% if node['consul']['multiple_private_ips'] == true %>
   "bind_addr": "<%= node['network']['interfaces'][node['consul']['if']]['addresses'].keys[1] %>",
 <% elsif node['consul']['bind_addr'] != '' %>
   "bind_addr": "<%= node['consul']['bind_addr'] %>",
