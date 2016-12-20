@@ -10,6 +10,8 @@
 <% end -%>
   "domain": "<%= node['consul']['domain'] %>",
   "log_level": "<%= node['consul']['log_level'] %>",
-  "bind_addr": "<%= node['consul']['bind_addr'] %>",
+<% if node['consul']['bind_addr'] != "" %>
+  "bind_addr": "<%= node['network']['interfaces'][node['consul']['if']]['addresses'].keys[1] %>",
+<% end -%>
   "client_addr": "<%= node['consul']['client_addr'] %>"
 }
