@@ -10,6 +10,7 @@ default['consul']['systemd_cookbook']             = 'consul'
 default['consul']['download_url']                 = "https://releases.hashicorp.com/consul/#{default['consul']['version']}/consul_#{default['consul']['version']}_linux_amd64.zip"
 
 default['consul']['dc']                           = 'dc1'
+default['consul']['if']                           = 'enp0s8'
 default['consul']['servers']                      = %w()
 default['consul']['start_join']                   = false
 default['consul']['domain']                       = 'consul'

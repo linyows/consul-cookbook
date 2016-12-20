@@ -1,7 +1,7 @@
 {
   "datacenter": "<%= node['consul']['dc'] %>",
   "node_name": "<%= node.name.split('.')[0] %>",
-  "server": <%= Array(node['consul']['servers']).include?(node['network']['interfaces']['eth1']['addresses'].keys[1]) ? 'true' : 'false' %>,
+  "server": <%= Array(node['consul']['servers']).include?(node['network']['interfaces'][node['consul']['if']]['addresses'].keys[1]) ? 'true' : 'false' %>,
 <% if node['consul']['start_join'] == true -%>
   "start_join": [ <%= Array(node['consul']['servers']).map {|ip| "\"#{ip}\"" }.join(',') %> ],
 <% end -%>
