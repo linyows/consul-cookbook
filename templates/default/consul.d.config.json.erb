@@ -15,5 +15,8 @@
 <% elsif node['consul']['bind_addr'] != '' %>
   "bind_addr": "<%= node['consul']['bind_addr'] %>",
 <% end -%>
+<% if node['consul']['advertise_addr'] != '' %>
+  "advertise_addr": "<%= node['consul']['advertise_addr'] %>",
+<% end -%>
   "client_addr": "<%= node['consul']['client_addr'] %>"
 }
