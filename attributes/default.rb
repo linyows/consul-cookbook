@@ -3,7 +3,7 @@
 
 default['consul']['lib_path']                     = '/usr/lib/consul'
 
-default['consul']['version']                      = '0.7.1'
+default['consul']['version']                      = '0.7.2'
 default['consul']['command_options']              = ['-data-dir /tmp/consul']
 default['consul']['conf_cookbook']                = 'consul'
 default['consul']['systemd_cookbook']             = 'consul'
@@ -19,7 +19,7 @@ default['consul']['bind_addr']                    = ''
 default['consul']['client_addr']                  = '127.0.0.1'
 default['consul']['multiple_private_ips']         = false
 
-default['consul']['web_ui']['version']            = '0.7.1'
+default['consul']['web_ui']['version']            = '0.7.2'
 default['consul']['web_ui']['use']                = false
 default['consul']['web_ui']['download_url']       = "https://releases.hashicorp.com/consul/#{default['consul']['version']}/consul_#{default['consul']['version']}_web_ui.zip"
 
