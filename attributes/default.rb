@@ -4,7 +4,8 @@
 default['consul']['lib_path']                     = '/usr/lib/consul'
 
 default['consul']['version']                      = '0.7.2'
-default['consul']['command_options']              = ['-data-dir /tmp/consul']
+default['consul']['data_dir']                     = '/tmp/consul'
+default['consul']['command_options']              = ["-data-dir #{default['consul']['data_dir']}"]
 default['consul']['conf_cookbook']                = 'consul'
 default['consul']['systemd_cookbook']             = 'consul'
 default['consul']['download_url']                 = "https://releases.hashicorp.com/consul/#{default['consul']['version']}/consul_#{default['consul']['version']}_linux_amd64.zip"
