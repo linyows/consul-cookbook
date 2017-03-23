@@ -3,7 +3,7 @@
 
 default['consul']['lib_path']                     = '/usr/lib/consul'
 
-default['consul']['version']                      = '0.7.2'
+default['consul']['version']                      = '0.7.5'
 default['consul']['data_dir']                     = '/tmp/consul'
 default['consul']['command_options']              = ["-data-dir #{default['consul']['data_dir']}"]
 default['consul']['conf_cookbook']                = 'consul'
