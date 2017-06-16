@@ -30,7 +30,7 @@ directory "#{node['consul']['lib_path']}/bin" do
   action :create
 end
 
-cookbook_file '/usr/lib/systemd/system/consul.service' do
+cookbook_file "#{node['consul']['systemd_unit_dir']}/consul.service" do
   source 'consul.service'
   owner 'root'
   group 'root'

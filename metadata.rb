@@ -11,4 +11,4 @@ recipe 'consul::template', 'Installs and configures consul-template'
 recipe 'consul::alerts', 'Installs and configures consul-alerts'
 recipe 'consul::retry', 'Installs retry script for check'
 
-%w(centos redhat).each { |os| supports os }
+%w(centos redhat fedora ubuntu debian).each { |os| supports os }

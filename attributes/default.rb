@@ -39,3 +39,10 @@ default['consul']['alerts']['systemd_cookbook']   = 'consul'
 
 default['consul']['retry']['version']             = '0.3.0'
 default['consul']['retry']['download_url']        = "https://github.com/linyows/go-retry/releases/download/v#{default['consul']['retry']['version']}/linux_amd64.zip"
+
+case node['platform_family']
+when 'rhel', 'fedora'
+  default['consul']['systemd_unit_dir']           = '/usr/lib/systemd/system'
+when 'debian'
+  default['consul']['systemd_unit_dir']           = '/etc/systemd/system'
+end

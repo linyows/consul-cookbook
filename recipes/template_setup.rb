@@ -19,7 +19,7 @@ directory '/var/run/consul-template' do
   action :create
 end
 
-cookbook_file '/usr/lib/systemd/system/consul-template.service' do
+cookbook_file "#{node['consul']['systemd_unit_dir']}/consul-template.service" do
   source 'consul-template.service'
   owner 'root'
   group 'root'
