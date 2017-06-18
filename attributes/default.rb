@@ -3,7 +3,7 @@
 
 default['consul']['lib_path']                     = '/usr/lib/consul'
 
-default['consul']['version']                      = '0.7.5'
+default['consul']['version']                      = '0.8.4'
 default['consul']['data_dir']                     = '/tmp/consul'
 default['consul']['command_options']              = ["-data-dir #{default['consul']['data_dir']}"]
 default['consul']['conf_cookbook']                = 'consul'
@@ -21,23 +21,23 @@ default['consul']['advertise_addr']               = ''
 default['consul']['client_addr']                  = '127.0.0.1'
 default['consul']['multiple_private_ips']         = false
 
-default['consul']['web_ui']['version']            = '0.7.2'
+default['consul']['web_ui']['version']            = '0.8.4'
 default['consul']['web_ui']['use']                = false
 default['consul']['web_ui']['download_url']       = "https://releases.hashicorp.com/consul/#{default['consul']['version']}/consul_#{default['consul']['version']}_web_ui.zip"
 
-default['consul']['template']['version']          = '0.16.0'
+default['consul']['template']['version']          = '0.18.5'
 default['consul']['template']['download_url']     = "https://releases.hashicorp.com/consul-template/#{default['consul']['template']['version']}/consul-template_#{default['consul']['template']['version']}_linux_amd64.zip"
 default['consul']['template']['command_options']  = []
 default['consul']['template']['conf_cookbook']    = 'consul'
 default['consul']['template']['systemd_cookbook'] = 'consul'
 default['consul']['template']['tmpfiles_cookbook']= 'consul'
 
-default['consul']['alerts']['version']            = '0.4.0'
+default['consul']['alerts']['version']            = '0.5.0'
 default['consul']['alerts']['download_url']       = "https://github.com/AcalephStorage/consul-alerts/releases/download/v#{default['consul']['alerts']['version']}/consul-alerts-#{default['consul']['alerts']['version']}-linux-amd64.tar"
 default['consul']['alerts']['command_options']    = %w(--watch-events --watch-checks --consul-dc=dc1)
 default['consul']['alerts']['systemd_cookbook']   = 'consul'
 
-default['consul']['retry']['version']             = '0.3.0'
+default['consul']['retry']['version']             = '0.3.1'
 default['consul']['retry']['download_url']        = "https://github.com/linyows/go-retry/releases/download/v#{default['consul']['retry']['version']}/linux_amd64.zip"
 
 case node['platform_family']
