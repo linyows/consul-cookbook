@@ -7,7 +7,7 @@ After=network-online.target consul.service
 [Service]
 Environment=GOMAXPROCS=2
 Restart=on-failure
-EnvironmentFile=-/etc/sysconfig/consul-template
+EnvironmentFile=-<%= node['consul']['sysconfig_dir'] %>/consul-template
 ExecStart=/usr/bin/consul-template $OPTIONS -config=/etc/consul-template.conf
 ExecReload=/bin/kill -HUP $MAINPID
 KillMode=process

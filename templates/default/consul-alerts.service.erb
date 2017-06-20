@@ -6,7 +6,7 @@ After=network-online.target consul.service
 
 [Service]
 Environment=GOMAXPROCS=2
-EnvironmentFile=-/etc/sysconfig/consul-alerts
+EnvironmentFile=-<%= node['consul']['sysconfig_dir'] %>/consul-alerts
 ExecStart=/usr/bin/consul-alerts start $OPTIONS
 Restart=on-failure
 ExecReload=/bin/kill -HUP $MAINPID
