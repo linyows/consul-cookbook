@@ -10,7 +10,7 @@ cookbook_file "#{node['consul']['systemd_unit_dir']}/consul-alerts.service" do
   notifies :restart, 'service[consul-alerts]', :delayed
 end
 
-template '/etc/sysconfig/consul-alerts' do
+template "#{node['consul']['sysconfig_dir']}/consul-alerts" do
   source 'sysconfig.consul-alerts.erb'
   owner 'root'
   group 'root'

@@ -42,7 +42,9 @@ default['consul']['retry']['download_url']        = "https://github.com/linyows/
 
 case node['platform_family']
 when 'rhel', 'fedora'
+  default['consul']['sysconfig_dir']              = '/etc/sysconfig'
   default['consul']['systemd_unit_dir']           = '/usr/lib/systemd/system'
 when 'debian'
-  default['consul']['systemd_unit_dir']           = '/etc/systemd/system'
+  default['consul']['sysconfig_dir']              = '/etc/default'
+  default['consul']['systemd_unit_dir']           = '/lib/systemd/system'
 end

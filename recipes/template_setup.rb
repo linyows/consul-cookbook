@@ -28,7 +28,7 @@ cookbook_file "#{node['consul']['systemd_unit_dir']}/consul-template.service" do
   notifies :restart, 'service[consul-template]', :delayed
 end
 
-template '/etc/sysconfig/consul-template' do
+template "#{node['consul']['sysconfig_dir']}/consul-template" do
   source 'sysconfig.consul-template.erb'
   owner 'root'
   group 'root'
