@@ -1,5 +1,15 @@
-consul = "127.0.0.1:8500"
-retry = "10s"
+consul {
+  address = "127.0.0.1:8500"
+  ssl {
+    enabled = false
+  }
+  retry {
+    enabled = true
+    attempts = 5
+    backoff = "500ms"
+  }
+}
+
 max_stale = "10m"
 log_level = "warn"
 pid_file = "/var/run/consul-template/pid"
@@ -10,7 +20,7 @@ syslog {
 }
 
 template {
-  source = "/tmp/nginx.backends.ctmpl"
-  destination = "/tmp/dynamic.backends.conf"
-  command = "service nginx reload"
+  source = "/tmp/h2o.upstream.conf.ctmpl"
+  destination = "/tmp/h2o.upstream.conf"
+  command = "systemctl reload h2o.service"
 }
