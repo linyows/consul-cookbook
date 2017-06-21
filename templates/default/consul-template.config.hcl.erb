@@ -20,7 +20,7 @@ syslog {
 }
 
 template {
-  source = "/tmp/h2o.upstream.conf.ctmpl"
+  source = "/etc/consul-template/h2o.upstream.conf.ctmpl"
   destination = "/tmp/h2o.upstream.conf"
   command = "systemctl reload h2o.service"
 }
