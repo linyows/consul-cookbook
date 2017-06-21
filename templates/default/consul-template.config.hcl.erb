@@ -12,7 +12,7 @@ consul {
 
 max_stale = "10m"
 log_level = "warn"
-pid_file = "/var/run/consul-template/pid"
+pid_file = "<%= node['consul']['template']['pid']"
 
 syslog {
   enabled = true
