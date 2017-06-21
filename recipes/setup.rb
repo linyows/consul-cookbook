@@ -34,7 +34,7 @@ template "#{node['consul']['systemd_unit_dir']}/consul.service" do
   source 'consul.service'
   owner 'root'
   group 'root'
-  mode '0755'
+  mode '0644'
   cookbook node['consul']['systemd_cookbook']
   notifies :restart, 'service[consul]', :delayed
 end
@@ -43,6 +43,6 @@ template "#{node['consul']['sysconfig_dir']}/consul" do
   source 'sysconfig.consul.erb'
   owner 'root'
   group 'root'
-  mode '0755'
+  mode '0644'
   notifies :restart, 'service[consul]', :delayed
 end
