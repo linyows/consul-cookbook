@@ -31,8 +31,8 @@ cookbook_file '/etc/tmpfiles.d/consul-template.conf' do
 end
 
 directory '/var/run/consul-template' do
-  owner 'root'
-  group 'root'
+  owner 'consul-template'
+  group 'consul-template'
   mode '0755'
   action :create
 end
