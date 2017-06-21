@@ -1,8 +1,8 @@
 # Cookbook Name:consul
 # Recipe: template_config
 
-template '/etc/consul-template.conf' do
-  source 'consul-template.conf.erb'
+template '/etc/consul-template/config.hcl' do
+  source 'consul-template.config.hcl.erb'
   user 'consul-template'
   group 'consul-template'
   mode '0644'

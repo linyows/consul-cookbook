@@ -15,6 +15,13 @@ user 'consul-template' do
   comment 'Service user for consul-template'
 end
 
+directory '/etc/consul-template' do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
+end
+
 cookbook_file '/etc/tmpfiles.d/consul-template.conf' do
   source 'tmpfiles.d.consul-template.conf'
   owner 'root'
