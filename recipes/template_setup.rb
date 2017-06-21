@@ -38,7 +38,7 @@ directory '/var/run/consul-template' do
 end
 
 template "#{node['consul']['systemd_unit_dir']}/consul-template.service" do
-  source 'consul-template.service'
+  source 'consul-template.service.erb'
   owner 'root'
   group 'root'
   mode '0644'

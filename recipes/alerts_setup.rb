@@ -13,7 +13,7 @@ user 'consul-alert' do
 end
 
 template "#{node['consul']['systemd_unit_dir']}/consul-alerts.service" do
-  source 'consul-alerts.service'
+  source 'consul-alerts.service.erb'
   owner 'root'
   group 'root'
   mode '0644'

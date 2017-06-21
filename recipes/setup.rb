@@ -31,7 +31,7 @@ directory "#{node['consul']['lib_path']}/bin" do
 end
 
 template "#{node['consul']['systemd_unit_dir']}/consul.service" do
-  source 'consul.service'
+  source 'consul.service.erb'
   owner 'root'
   group 'root'
   mode '0644'
