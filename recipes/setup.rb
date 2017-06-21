@@ -15,7 +15,7 @@ user 'consul' do
   comment 'Service user for consul'
 end
 
-directory '/etc/consul.d' do
+directory '/etc/consul' do
   owner 'root'
   group 'root'
   mode '0755'
