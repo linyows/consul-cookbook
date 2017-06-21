@@ -32,6 +32,7 @@ default['consul']['template']['command_options']  = []
 default['consul']['template']['conf_cookbook']    = 'consul'
 default['consul']['template']['systemd_cookbook'] = 'consul'
 default['consul']['template']['tmpfiles_cookbook']= 'consul'
+default['consul']['template']['pid']              = '/var/run/consul-template/pid'
 
 default['consul']['alerts']['version']            = '0.5.0'
 default['consul']['alerts']['download_url']       = "https://github.com/AcalephStorage/consul-alerts/releases/download/v#{default['consul']['alerts']['version']}/consul-alerts-#{default['consul']['alerts']['version']}-linux-amd64.tar"

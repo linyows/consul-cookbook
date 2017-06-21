@@ -10,9 +10,10 @@ Group=consul-template
 Environment=GOMAXPROCS=2
 Restart=on-failure
 EnvironmentFile=-<%= node['consul']['sysconfig_dir'] %>/consul-template
+PIDFile=<%= node['consul']['template']['pid'] %>
 ExecStart=<%= node['consul']['bin'] %>/consul-template $OPTIONS -config=/etc/consul-template/config.hcl
-ExecReload=/bin/kill -HUP $MAINPID
-KillMode=process
+ExecReload=/bin/kill -SIGHUP $MAINPID
+ExecStop=/bin/kill -SIGINT $MAINPID
 
 [Install]
 WantedBy=multi-user.target
