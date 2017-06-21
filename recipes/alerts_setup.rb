@@ -1,6 +1,17 @@
 # Cookbook Name: consul
 # Recipe: alerts_setup
 
+group 'consul-alert' do
+  system true
+end
+
+user 'consul-alert' do
+  shell '/bin/false'
+  system true
+  gid 'consul-alert'
+  comment 'Service user for consul-alert'
+end
+
 template "#{node['consul']['systemd_unit_dir']}/consul-alerts.service" do
   source 'consul-alerts.service'
   owner 'root'

@@ -4,6 +4,17 @@
 package 'unzip'
 package 'curl'
 
+group 'consul-template' do
+  system true
+end
+
+user 'consul-template' do
+  shell '/bin/false'
+  system true
+  gid 'consul-template'
+  comment 'Service user for consul-template'
+end
+
 cookbook_file '/etc/tmpfiles.d/consul-template.conf' do
   source 'tmpfiles.d.consul-template.conf'
   owner 'root'

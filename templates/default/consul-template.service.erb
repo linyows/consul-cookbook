@@ -5,6 +5,8 @@ Requires=network-online.target consul.service
 After=network-online.target consul.service
 
 [Service]
+User=consul-template
+Group=consul-template
 Environment=GOMAXPROCS=2
 Restart=on-failure
 EnvironmentFile=-<%= node['consul']['sysconfig_dir'] %>/consul-template
