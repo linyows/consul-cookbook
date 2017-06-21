@@ -2,7 +2,6 @@
 # Recipe: consul_template
 
 cache_path = Chef::Config[:file_cache_path]
-bin_path = '/usr/bin'
 
 remote_file "#{cache_path}/consul-template-#{node['consul']['template']['version']}.zip" do
   source node['consul']['template']['download_url']
@@ -20,7 +19,7 @@ bash "expand consul-template-#{node['consul']['template']['version']}" do
   CODE
 end
 
-link "#{bin_path}/consul-template" do
+link "#{node['consul']['bin']}/consul-template" do
   to "#{node['consul']['lib_path']}/bin/consul-template-#{node['consul']['template']['version']}"
   notifies :restart, 'service[consul-template]', :delayed
 end

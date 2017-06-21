@@ -2,7 +2,6 @@
 # Recipe:: retry
 
 cache_path = Chef::Config[:file_cache_path]
-bin_path = '/usr/bin'
 
 remote_file "#{cache_path}/retry-#{node['consul']['retry']['version']}.zip" do
   source node['consul']['retry']['download_url']
@@ -15,7 +14,7 @@ bash "expand retry-#{node['consul']['retry']['version']}" do
     cd "#{cache_path}"
     unzip retry-#{node['consul']['retry']['version']}.zip
     chmod +x retry
-    rm -rf #{bin_path}/retry
-    mv retry #{bin_path}/retry
+    rm -rf #{node['consul']['bin']}/retry
+    mv retry #{node['consul']['bin']}/retry
   CODE
 end

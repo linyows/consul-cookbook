@@ -9,6 +9,7 @@ default['consul']['command_options']              = ["-data-dir #{default['consu
 default['consul']['conf_cookbook']                = 'consul'
 default['consul']['systemd_cookbook']             = 'consul'
 default['consul']['download_url']                 = "https://releases.hashicorp.com/consul/#{default['consul']['version']}/consul_#{default['consul']['version']}_linux_amd64.zip"
+default['consul']['bin']                          = '/usr/bin'
 
 default['consul']['dc']                           = 'dc1'
 default['consul']['if']                           = 'enp0s8'

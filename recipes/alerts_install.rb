@@ -2,7 +2,6 @@
 # Recipe: alerts_install
 
 cache_path = Chef::Config[:file_cache_path]
-bin_path = '/usr/bin'
 
 remote_file "#{cache_path}/consul-alerts-#{node['consul']['alerts']['version']}.tar" do
   source node['consul']['alerts']['download_url']
@@ -20,7 +19,7 @@ bash "expand consul-alerts-#{node['consul']['alerts']['version']}" do
   CODE
 end
 
-link "#{bin_path}/consul-alerts" do
+link "#{node['consul']['bin']}/consul-alerts" do
   to "#{node['consul']['lib_path']}/bin/consul-alerts-#{node['consul']['alerts']['version']}"
   notifies :restart, 'service[consul-alerts]', :delayed
 end

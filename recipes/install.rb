@@ -2,7 +2,6 @@
 # Recipe: install
 
 cache_path = Chef::Config[:file_cache_path]
-bin_path = '/usr/bin'
 
 remote_file "#{cache_path}/consul-#{node['consul']['version']}.zip" do
   source node['consul']['download_url']
@@ -19,7 +18,7 @@ bash "expand consul-#{node['consul']['version']}" do
   CODE
 end
 
-link "#{bin_path}/consul" do
+link "#{node['consul']['bin']}/consul" do
   to "#{node['consul']['lib_path']}/bin/consul-#{node['consul']['version']}"
   notifies :restart, 'service[consul]', :delayed
 end
