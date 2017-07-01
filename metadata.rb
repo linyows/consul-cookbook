@@ -10,5 +10,6 @@ recipe 'consul', 'Installs and configures consul'
 recipe 'consul::template', 'Installs and configures consul-template'
 recipe 'consul::alerts', 'Installs and configures consul-alerts'
 recipe 'consul::retry', 'Installs retry script for check'
+recipe 'consul::slack_notification', 'Install slack-notification script'
 
 %w(centos redhat fedora ubuntu debian).each { |os| supports os }
