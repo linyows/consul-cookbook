@@ -50,3 +50,6 @@ when 'debian'
   default['consul']['sysconfig_dir']              = '/etc/default'
   default['consul']['systemd_unit_dir']           = '/lib/systemd/system'
 end
+
+default['consul']['slack_notification']['incomming_webhook'] = ''
+default['consul']['slack_notification']['channel'] = '#general'
