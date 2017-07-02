@@ -9,6 +9,9 @@ Usage
 ```
 include_recipe 'consul'
 include_recipe 'consul::template'
+include_recipe 'consul::alerts'
+include_recipe 'consul::retry'
+include_recipe 'consul::slck_notification'
 ```
 
 see templates/default/**
