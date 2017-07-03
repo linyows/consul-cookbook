@@ -2,14 +2,15 @@
 
 endpoint="<%= node['consul']['slack_notification']['incomming_webhook'] %>"
 channel='<%= node['consul']['slack_notification']['channel'] %>'
-username='consul template'
 icon_url='https://s3-us-west-2.amazonaws.com/slack-files2/avatars/2015-11-09/14141981060_7a15284e352a9baa6903_48.jpg'
 
 default_text=''
+default_username='consul template'
 default_attachment_text='This is a line of text.'
 default_attachment_color='good'
 
 text=${SLACK_TEXT:-$default_text}
+username=${SLACK_USERNAME:-$default_username}
 attachment_text=${SLACK_ATTACHMENT_TEXT:-$default_attachment_text}
 attachment_color=${SLACK_ATTACHMENT_COLOR:-$default_attachment_color}
 attachment_fallback=$attachment_text
