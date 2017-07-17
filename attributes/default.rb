@@ -22,7 +22,7 @@ default['consul']['advertise_addr']               = ''
 default['consul']['client_addr']                  = '127.0.0.1'
 default['consul']['multiple_private_ips']         = false
 
-default['consul']['web_ui']['version']            = '0.8.4'
+default['consul']['web_ui']['version']            = '0.9.0-rc1'
 default['consul']['web_ui']['use']                = false
 default['consul']['web_ui']['download_url']       = "https://releases.hashicorp.com/consul/#{default['consul']['version']}/consul_#{default['consul']['version']}_web_ui.zip"
 
