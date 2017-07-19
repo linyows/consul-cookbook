@@ -26,7 +26,7 @@ default['consul']['web_ui']['version']            = '0.9.0-rc1'
 default['consul']['web_ui']['use']                = false
 default['consul']['web_ui']['download_url']       = "https://releases.hashicorp.com/consul/#{default['consul']['web_ui']['version']}/consul_#{default['consul']['web_ui']['version']}_web_ui.zip"
 
-default['consul']['template']['version']          = '0.18.5'
+default['consul']['template']['version']          = '0.19.0'
 default['consul']['template']['download_url']     = "https://releases.hashicorp.com/consul-template/#{default['consul']['template']['version']}/consul-template_#{default['consul']['template']['version']}_linux_amd64.zip"
 default['consul']['template']['command_options']  = []
 default['consul']['template']['conf_cookbook']    = 'consul'
