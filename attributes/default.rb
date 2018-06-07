@@ -3,7 +3,8 @@
 
 default['consul']['lib_path']                     = '/usr/lib/consul'
 
-default['consul']['version']                      = '0.9.0'
+default['consul']['version']                      = '1.1.0'
+default['consul']['sha256']                       = '09c40c8b5be868003810064916d8460bff334ccfb59a5046390224b27e052c45'
 default['consul']['data_dir']                     = '/tmp/consul'
 default['consul']['command_options']              = ["-data-dir #{default['consul']['data_dir']}"]
 default['consul']['conf_cookbook']                = 'consul'
@@ -26,7 +27,8 @@ default['consul']['web_ui']['version']            = '0.9.0-rc1'
 default['consul']['web_ui']['use']                = false
 default['consul']['web_ui']['download_url']       = "https://releases.hashicorp.com/consul/#{default['consul']['web_ui']['version']}/consul_#{default['consul']['web_ui']['version']}_web_ui.zip"
 
-default['consul']['template']['version']          = '0.19.0'
+default['consul']['template']['version']          = '0.19.4'
+default['consul']['template']['sha256']           = 'ff92c2b8c2248887bb617d55561b37a954a87275e14eeac96c6b098850236d20'
 default['consul']['template']['download_url']     = "https://releases.hashicorp.com/consul-template/#{default['consul']['template']['version']}/consul-template_#{default['consul']['template']['version']}_linux_amd64.zip"
 default['consul']['template']['command_options']  = []
 default['consul']['template']['conf_cookbook']    = 'consul'

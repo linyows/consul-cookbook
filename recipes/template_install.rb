@@ -5,6 +5,7 @@ cache_path = Chef::Config[:file_cache_path]
 
 remote_file "#{cache_path}/consul-template-#{node['consul']['template']['version']}.zip" do
   source node['consul']['template']['download_url']
+  checksum node['consul']['template']['sha256']
   action :create_if_missing
 end
 
