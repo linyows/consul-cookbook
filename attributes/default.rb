@@ -9,6 +9,7 @@ default['consul']['data_dir']                     = '/tmp/consul'
 default['consul']['command_options']              = ["-data-dir #{default['consul']['data_dir']}"]
 default['consul']['conf_cookbook']                = 'consul'
 default['consul']['systemd_cookbook']             = 'consul'
+default['consul']['sysconfig_cookbook']           = 'consul'
 default['consul']['download_url']                 = "https://releases.hashicorp.com/consul/#{default['consul']['version']}/consul_#{default['consul']['version']}_linux_amd64.zip"
 default['consul']['bin']                          = '/usr/bin'
 
@@ -33,6 +34,7 @@ default['consul']['template']['download_url']     = "https://releases.hashicorp.
 default['consul']['template']['command_options']  = []
 default['consul']['template']['conf_cookbook']    = 'consul'
 default['consul']['template']['systemd_cookbook'] = 'consul'
+default['consul']['template']['sysconfig_cookbook'] = 'consul'
 default['consul']['template']['tmpfiles_cookbook']= 'consul'
 default['consul']['template']['pid']              = '/var/run/consul-template/pid'
 
@@ -40,6 +42,7 @@ default['consul']['alerts']['version']            = '0.5.0'
 default['consul']['alerts']['download_url']       = "https://github.com/AcalephStorage/consul-alerts/releases/download/v#{default['consul']['alerts']['version']}/consul-alerts-#{default['consul']['alerts']['version']}-linux-amd64.tar"
 default['consul']['alerts']['command_options']    = %w(--watch-events --watch-checks --consul-dc=dc1)
 default['consul']['alerts']['systemd_cookbook']   = 'consul'
+default['consul']['alerts']['sysconfig_cookbook'] = 'consul'
 
 default['consul']['retry']['version']             = '0.3.1'
 default['consul']['retry']['download_url']        = "https://github.com/linyows/go-retry/releases/download/v#{default['consul']['retry']['version']}/linux_amd64.zip"

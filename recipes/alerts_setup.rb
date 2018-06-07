@@ -26,5 +26,6 @@ template "#{node['consul']['sysconfig_dir']}/consul-alerts" do
   owner 'root'
   group 'root'
   mode '0644'
+  cookbook node['consul']['alerts']['sysconfig_cookbook']
   notifies :restart, 'service[consul-alerts]', :delayed
 end

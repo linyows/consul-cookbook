@@ -44,5 +44,6 @@ template "#{node['consul']['sysconfig_dir']}/consul" do
   owner 'root'
   group 'root'
   mode '0644'
+  cookbook node['consul']['sysconfig_cookbook']
   notifies :restart, 'service[consul]', :delayed
 end
