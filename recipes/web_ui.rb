@@ -20,7 +20,7 @@ bash "expand consul-web-ui-#{node['consul']['web_ui']['version']}" do
   not_if "test -d #{node['consul']['lib_path']}/web-ui/#{node['consul']['web_ui']['version']}"
   code <<-CODE
     cd "#{cache_path}"
-    unzip consul-web-ui-#{node['consul']['web_ui']['version']}.zip
+    unzip -o consul-web-ui-#{node['consul']['web_ui']['version']}.zip
     mv dist #{node['consul']['lib_path']}/web-ui/#{node['consul']['web_ui']['version']}
   CODE
 end

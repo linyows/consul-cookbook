@@ -13,7 +13,7 @@ bash "expand consul-template-#{node['consul']['template']['version']}" do
   not_if "test -f #{node['consul']['lib_path']}/bin/consul-template-#{node['consul']['template']['version']}"
   code <<-CODE
     cd "#{cache_path}"
-    unzip consul-template-#{node['consul']['template']['version']}.zip
+    unzip -o consul-template-#{node['consul']['template']['version']}.zip
     mkdir -p #{node['consul']['lib_path']}/bin
     chmod +x consul-template
     mv consul-template #{node['consul']['lib_path']}/bin/consul-template-#{node['consul']['template']['version']}

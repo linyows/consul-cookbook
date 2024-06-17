@@ -12,7 +12,7 @@ bash "expand retry-#{node['consul']['retry']['version']}" do
   not_if "which retry && test $(retry -version 2>&1 | awk '{print $3}') = '#{node['consul']['retry']['version']}'"
   code <<-CODE
     cd "#{cache_path}"
-    unzip retry-#{node['consul']['retry']['version']}.zip
+    unzip -o retry-#{node['consul']['retry']['version']}.zip
     chmod +x retry
     rm -rf #{node['consul']['bin']}/retry
     mv retry #{node['consul']['bin']}/retry
