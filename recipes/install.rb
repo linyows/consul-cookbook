@@ -13,7 +13,7 @@ bash "expand consul-#{node['consul']['version']}" do
   not_if "test -f #{node['consul']['lib_path']}/bin/consul-#{node['consul']['version']}"
   code <<-CODE
     cd "#{cache_path}"
-    unzip consul-#{node['consul']['version']}.zip
+    unzip -o consul-#{node['consul']['version']}.zip
     chmod +x consul
     mv consul #{node['consul']['lib_path']}/bin/consul-#{node['consul']['version']}
   CODE
